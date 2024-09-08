@@ -13,19 +13,19 @@ class ChatgptUtil():
         self.__chatgpt_role = "你是我的助手，根據問題使用繁體中文回覆"
 
     # 使用 chatgpt 3.5 model
-    def chat_with_chatgpt3(self, message):
+    def chat_with_chatgpt3(self, message: str) -> str:
         response = self.__chat_with_chatgpt("gpt-3.5-turbo", message)
 
         return response
 
     # 使用 chatgpt 4 model
-    def chat_with_chatgpt4(self, message):
+    def chat_with_chatgpt4(self, message: str) -> str:
         response = self.__chat_with_chatgpt("gpt-4-turbo", message)
 
         return response
 
     # 使用自定義模型
-    def chat_with_chatgpt(self, message):
+    def chat_with_chatgpt(self, message: str) -> str:
         if self.__model == None:
             raise ValueError("Null exception: 請設定 ai model")
 
@@ -33,13 +33,13 @@ class ChatgptUtil():
 
         return response
 
-    def set_model(self, model):
+    def set_model(self, model: str) -> None:
         self.__model = model
 
-    def set_chatgpt_role(self, chatgpt_role):
+    def set_chatgpt_role(self, chatgpt_role: str) -> None:
         self.__chatgpt_role = chatgpt_role
 
-    def __chat_with_chatgpt(self, model, message):
+    def __chat_with_chatgpt(self, model: str, message: str) -> str:
         chatgpt_role = self.__chatgpt_role
 
         response = self.__client.chat.completions.create(
@@ -50,6 +50,6 @@ class ChatgptUtil():
             ]
         )
 
-        content = response.choices[0].message.content
+        response = response.choices[0].message.content
 
-        return content
+        return response
