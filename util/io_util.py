@@ -3,7 +3,7 @@ class IoUtil():
     def __init__(self):
         pass
 
-    def read_file_to_dict(self, file_path, separator):
+    def read_file_to_dict(self, file_path: str, separator: str) -> dict:
         data_dict = {}
         with open(file_path, "r") as file:
             for line in file:
