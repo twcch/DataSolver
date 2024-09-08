@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-from util.key_util import KeyUtil
+from core.util.key_util import KeyUtil
 
 
 class ChatgptUtil():
