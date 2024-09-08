@@ -7,6 +7,7 @@ class ChatgptUtil():
     def __init__(self):
         self.__path_util = PathUtil()
         self.__api_key = self.__get_openai_key()
+        self.__model = None
         self.__client = OpenAI(api_key=self.__api_key)
         self.__chatgpt_role = "你是我的助手，根據問題使用繁體中文回覆"
 
@@ -19,6 +20,15 @@ class ChatgptUtil():
     # 使用 chatgpt 4 model
     def chat_with_chatgpt4(self, message):
         content = self.__chat_with_chatgpt("gpt-4-turbo", message)
+
+        return content
+
+    # 使用自定義模型
+    def chat_with_chatgpt(self, message):
+        if self.__model == None:
+            raise ValueError("Null exception: 請設定 ai model")
+
+        content = self.__chat_with_chatgpt(self.__model, message)
 
         return content
 
