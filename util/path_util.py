@@ -11,8 +11,7 @@ class PathUtil():
 
         self.__code_folder = os.path.join(self.__documents, "Code")
         self.__datascience_folder = os.path.join(self.__code_folder , "DataScience")
-
-        self.__keys_folder = os.path.join(self.__datascience_folder, "_keys")
+        self.__keys_folder = os.path.join(self.__code_folder, "_keys")
 
     def get_user(self):
         return self.__user
