@@ -1,4 +1,4 @@
-from core.util.finance_draw.stock_price_chart_util import StockPriceChartUtil
+from core.util.yfinance.draw.stock_price_chart_util import StockPriceChartUtil
 
 
 stock_price_chart_util = StockPriceChartUtil("2330.TW")
