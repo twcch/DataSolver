@@ -1,6 +1,11 @@
-from core.util.yfinance.draw.stock_price_chart_util import StockPriceChartUtil
+import pandas as pd
+
+from core.util.file_util import FileUtil
 
 
-stock_price_chart_util = StockPriceChartUtil("2330.TW")
+file_util = FileUtil()
 
-stock_price_chart_util.plot_stock_close_price_trend_chart()
+data = pd.DataFrame({"A": [1, 2, 3],
+                     "B": [4, 5, 6]})
+
+print(file_util.generate_temp_file(data))

@@ -13,6 +13,8 @@ class PathUtil():
         self.__datascience_folder = os.path.join(self.__code_folder , "DataScience")
         self.__keys_folder = os.path.join(self.__code_folder, "_keys")
 
+        self.__temp_data_folder = "./temp/data"
+
     def get_user(self) -> str:
         return self.__user
 
@@ -36,3 +38,6 @@ class PathUtil():
 
     def get_keys_folder(self) -> str:
         return self.__keys_folder
+
+    def get_temp_data_folder(self) -> str:
+        return self.__temp_data_folder
