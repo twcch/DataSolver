@@ -19,3 +19,5 @@ for i in range(table_number):
         l = mysql_util_1.dataframe_from_mysql(f"SELECT * FROM {tn}")
         df = pd.DataFrame(l)
         mysql_util_2.dataframe_to_mysql(tn, df)
+    else:
+        pass
