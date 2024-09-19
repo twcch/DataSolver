@@ -3,41 +3,15 @@ import os
 
 class PathUtil():
 
-    def __init__(self):
-        self.__user = os.path.expanduser("~")
-        self.__desktop = os.path.join(self.__user, "Desktop")
-        self.__downloads = os.path.join(self.__user, "Downloads")
-        self.__documents = os.path.join(self.__user, "Documents")
+    user_folder = os.path.expanduser("~")
+    desktop = os.path.join(user_folder, "Desktop")
+    downloads = os.path.join(user_folder, "Downloads")
+    documents = os.path.join(user_folder, "Documents")
+    drive = os.path.join(documents, "Drive")
+    data = os.path.join(drive, "Data")
 
-        self.__code_folder = os.path.join(self.__documents, "Code")
-        self.__datascience_folder = os.path.join(self.__code_folder , "DataScience")
-        self.__keys_folder = os.path.join(self.__code_folder, "_keys")
+    code_folder = os.path.join(documents, "Code")
+    datascience_folder = os.path.join(code_folder , "DataScience")
+    keys_folder = os.path.join(code_folder, "_keys")
 
-        self.__temp_data_folder = "./temp/data"
-
-    def get_user(self) -> str:
-        return self.__user
-
-    def get_desktop(self) -> str:
-        return self.__desktop
-
-    def get_downloads(self) -> str:
-        return self.__downloads
-
-    def get_documents(self) -> str:
-        return self.__documents
-
-    def get_documents_dev(self) -> str:
-        return self.__documents_dev
-
-    def get_code_folder(self) -> str:
-        return self.__code_folder
-
-    def get_datascience_folder(self) -> str:
-        return self.__datascience_folder
-
-    def get_keys_folder(self) -> str:
-        return self.__keys_folder
-
-    def get_temp_data_folder(self) -> str:
-        return self.__temp_data_folder
+    temp_data_folder = "./temp/data"

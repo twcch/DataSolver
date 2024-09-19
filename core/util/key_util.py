@@ -8,3 +8,9 @@ class KeyUtil():
         api_key = file.read()
 
         return api_key
+
+    def get_tej_api_key(self) -> str:
+        file = open(self.__key_folder + "/tej_key.txt", "r")
+        api_key = file.read()
+
+        return api_key
