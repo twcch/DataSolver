@@ -1,5 +1,7 @@
-from core.util.tej_data_util import TejDataUtil
+import tejapi
+import pandas as pd
 
+tejapi.ApiConfig.api_key = "rcL33ZVZvsWv8zABbNOm3pBI3DxRKc"
+data = pd.DataFrame(tejapi.get('TRAIL/TAOFCAN'))
 
-tej_data_util = TejDataUtil()
-tej_data_util.download_all_data("/Users/twcch/Documents/Drive/Data/TEJ/test_database")
+data.to_csv("/Users/twcch/Documents/Drive/Data/TEJ/test_database/TRAIL_TAOFCAN_v20240920.csv")
