@@ -1,6 +1,6 @@
 import pandas as pd
 
-from core.util.db.mysql_util import MysqlUtil
+from backup.core.util.db.mysql_util import MysqlUtil
 
 mysql_util_1 = MysqlUtil(database="perfect_trip_db",
                          host="iorlvm.i234.me",

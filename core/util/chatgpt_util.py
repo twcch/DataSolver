@@ -1,15 +1,11 @@
 from openai import OpenAI
-
-from core.util.key_util import KeyUtil
+import os
 
 
 class ChatgptUtil():
-
     def __init__(self):
-        self.__key_util = KeyUtil()
-        self.__api_key = self.__key_util.get_chatgpt_api_key()
         self.__model = None
-        self.__client = OpenAI(api_key=self.__api_key)
+        self.__client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
         self.__chatgpt_role = "你是我的助手，根據問題使用繁體中文回覆"
 
     # 使用 chatgpt 3.5 model
@@ -33,10 +29,16 @@ class ChatgptUtil():
 
         return response
 
-    def set_model(self, model: str) -> None:
+    def get_model(self):
+        return self.__model
+
+    def set_model(self, model):
         self.__model = model
 
-    def set_chatgpt_role(self, chatgpt_role: str) -> None:
+    def get_chatgpt_role(self):
+        return self.__chatgpt_role
+
+    def set_chatgpt_role(self, chatgpt_role):
         self.__chatgpt_role = chatgpt_role
 
     def __chat_with_chatgpt(self, model: str, message: str) -> str:

@@ -1,6 +1,6 @@
-from function.api_data_processor.api_data_processor import ApiDataProcessor
-from core.util.key_util import KeyUtil
-from function.api_data_processor.constant.data_table import DataTable
+from backup.function.api_data_processor.api_data_processor import ApiDataProcessor
+from backup.core.util.key_util import KeyUtil
+from backup.function.api_data_processor.constant.data_table import DataTable
 import tejapi
 import pandas as pd
 

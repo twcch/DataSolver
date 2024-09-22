@@ -3,7 +3,7 @@ import pandas as pd
 from pandasai import Agent
 from pandasai.llm import OpenAI
 
-from core.util.key_util import KeyUtil
+from backup.core.util.key_util import KeyUtil
 
 
 class PandasaiUtil():

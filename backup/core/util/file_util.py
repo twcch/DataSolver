@@ -2,7 +2,7 @@ import random
 import pandas as pd
 from datetime import datetime
 
-from core.util.path_util import PathUtil
+from backup.core.util.path_util import PathUtil
 
 
 class FileUtil():
