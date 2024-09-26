@@ -55,7 +55,7 @@ class MysqlUtil():
     def get_host(self):
         return self.__host
 
-    def set_hostname(self, host):
+    def set_host(self, host):
         self.__host = host
 
     def get_port(self):
